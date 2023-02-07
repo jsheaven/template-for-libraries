@@ -6,7 +6,7 @@
     "access": "public"
   },
   "bin": {
-    "create-from-git": "./dist/cli.esm.js"
+    "template-name": "./dist/cli.esm.js"
   },
   "license": "MIT",
   "description": "",
