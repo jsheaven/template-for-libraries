@@ -36,7 +36,9 @@
 ```ts
 import { templateName } from 'template-name'
 
-const result = await templateName({})
+const result = await templateName({
+  foo: 'X',
+})
 ```
 
 <h3 align="center">CommonJS</h2>
