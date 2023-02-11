@@ -26,12 +26,12 @@
 
 <h2 align="center">Example usage (API, as a library)</h2>
 
-<h3 align="center">Setup</h2>
+<h3 align="center">Setup</h3>
 
 - yarn: `yarn add @jsheaven/template-name`
 - npm: `npm install @jsheaven/template-name`
 
-<h3 align="center">ESM</h2>
+<h3 align="center">ESM</h3>
 
 ```ts
 import { templateName } from '@jsheaven/template-name'
@@ -41,7 +41,7 @@ const result = await templateName({
 })
 ```
 
-<h3 align="center">CommonJS</h2>
+<h3 align="center">CommonJS</h3>
 
 ```ts
 const { templateName } = require('@jsheaven/template-name')
