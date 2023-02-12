@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals'
 import { templateName } from '../dist/index.esm'
 
 describe('templateName', () => {
