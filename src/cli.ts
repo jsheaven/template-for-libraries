@@ -62,7 +62,7 @@ const printHelp = () => {
     --help                Show this help message.
 
   ${colors.bold('Example(s):')}
-    npx template-name --foo X
+    npx @jsheaven/template-name --foo X
 `)
 }
 
