@@ -25,10 +25,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+      - uses: actions/cache@v3
+        with:
+          path: 'node_modules'
+          key: ${{ runner.os }}-${{ matrix.node-version }}-modules-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - run: yarn test
-        env:
-          UPSTASH_REDIS_TEST_URL: ${{ secrets.UPSTASH_REDIS_TEST_URL }}
-          UPSTASH_REDIS_TEST_TOKEN: ${{ secrets.UPSTASH_REDIS_TEST_TOKEN }}
