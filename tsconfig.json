@@ -8,12 +8,7 @@
     "outDir": "dist",
     "emitDeclarationOnly": true,
     "allowJs": true,
-    "lib": [
-      "es2021",
-      "dom"
-    ]
+    "lib": ["es2021", "dom"]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
