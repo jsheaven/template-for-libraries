@@ -22,6 +22,7 @@
     "clean": "rm -rf ./dist && rm -rf ./coverage",
     "prebuild": "yarn clean",
     "build": "yarn node --enable-source-maps ./build.mjs",
+    "release": "yarn node --enable-source-maps ./release.mjs",
     "lint": "prettier --check .",
     "lint:fix": "prettier --write .",
     "pre-commit": "yarn lint",

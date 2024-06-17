@@ -1,0 +1,34 @@
+name: Publish Package
+
+on:
+  workflow_run:
+    workflows: ["BuildAndTest"]
+    types:
+      - completed
+
+jobs:
+  publish:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - name: Download build
+        uses: actions/download-artifact@v2
+        with:
+            name: build
+            path: dist
+      - run: yarn release
+      - name: Publish if version in package.json change
+        uses: springtype-org/github-action-npm-publish@master
+        with:
+          install_build_packages: true
+          project_build_dir: release
+          create_tag: true
+          auth_token: ${{ secrets.npm_token }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
