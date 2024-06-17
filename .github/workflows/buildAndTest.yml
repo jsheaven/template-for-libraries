@@ -34,6 +34,6 @@ jobs:
       - name: Add artifact to github
         uses: actions/upload-artifact@v3
         with:
-          name: build-${{ runner.os }}-${{ matrix.node-version }}
+          name: build
           path: dist
 
