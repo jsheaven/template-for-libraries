@@ -18,17 +18,17 @@ jobs:
         with:
           node-version: 18.x
       - name: Download build
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
             name: build
-            path: dist
       - run: yarn release
-      - name: Publish if version in package.json change
-        uses: springtype-org/github-action-npm-publish@master
-        with:
-          install_build_packages: true
-          project_build_dir: release
-          create_tag: true
-          auth_token: ${{ secrets.npm_token }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+# TODO: change me!
+#      - name: Publish if version in package.json change
+#        uses: springtype-org/github-action-npm-publish@master
+#        with:
+#          install_build_packages: true
+#          project_build_dir: release
+#          create_tag: true
+#          auth_token: ${{ secrets.npm_token }}
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

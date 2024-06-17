@@ -32,7 +32,7 @@ jobs:
       - run: yarn build
       - run: yarn test
       - name: Add artifact to github
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build
           path: dist
