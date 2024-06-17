@@ -21,8 +21,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
             name: build
+            path: dist
             run-id: ${{ github.event.workflow_run.id }}
             github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: ls -al dist
       - run: yarn release
 # TODO: change me!
 #      - name: Publish if version in package.json change
