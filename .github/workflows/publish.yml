@@ -18,9 +18,11 @@ jobs:
         with:
           node-version: 18.x
       - name: Download build
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
             name: build
+            run-id: ${{ github.event.workflow_run.id }}
+            github-token: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn release
 # TODO: change me!
 #      - name: Publish if version in package.json change
